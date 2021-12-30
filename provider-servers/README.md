@@ -90,7 +90,7 @@ Example Reponse:
 ## Using Docker
 
 ### Requirements
-[ ] Docker \
+[ ] Docker
 
 ### Steps
 
