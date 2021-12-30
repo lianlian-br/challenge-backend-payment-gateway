@@ -90,7 +90,7 @@ Example Reponse:
 ## Using Docker
 
 ### Requirements
-[ ] Docker
+[ ] Docker \
 
 ### Steps
 
@@ -109,8 +109,8 @@ docker run -it --network=host -p 3001:3001 -p 3002:3002 -p 4001:4001 server-prov
 ## Using Make
 
 ### Requirements
-[ ] Python 3
-[ ] Python 3 Pip
+[ ] Python 3 \
+[ ] Python 3 Pip \
 [ ] Make
 
 ### Steps
@@ -120,7 +120,7 @@ Just run `make run`
 ## Using Python
 
 ### Requirements
-[ ] Python 3
+[ ] Python 3 \
 [ ] Python 3 Pip
 
 ### Steps
