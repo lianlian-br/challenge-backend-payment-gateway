@@ -85,17 +85,45 @@ Example Reponse:
 }
 ```
 
-# Requirements
-[ ] Python 3
-[ ] Python 3 Pip
-
 # Running
 
+## Using Docker
+
+### Requirements
+[ ] Docker
+
+### Steps
+
+First, you need to build the image, from this folder, run:
+
+```
+docker build . -t server-providers
+```
+
+And then, to run the servers, use the following command:
+
+```
+docker run -it --network=host -p 3001:3001 -p 3002:3002 -p 4001:4001 server-providers
+```
+
 ## Using Make
+
+### Requirements
+[ ] Python 3
+[ ] Python 3 Pip
+[ ] Make
+
+### Steps
 
 Just run `make run`
 
 ## Using Python
+
+### Requirements
+[ ] Python 3
+[ ] Python 3 Pip
+
+### Steps
 
 First, you need to update your dependencies, from this folder, run:
 
