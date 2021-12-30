@@ -12,7 +12,7 @@ Also, we recommend you read the entire spec before starting your project.
 
 Should have one endpoint that allows an client to authenticate.
 
-[ ] Should follow OAuth 2.0 [client credentials grant type](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) format.
+[ ] Should follow OAuth 2.0 [client credentials grant type](https://www.oauth.com/oauth2-servers/access-tokens/client-credentials/) format. \
 [ ] Should return the access_token as a JWT token.
 
 There is no need to implement every detail of the grant type spec, an endpoint that receives the id and secret, check for their validity and returns the token is enough.
@@ -40,8 +40,8 @@ Should have one or multiple endpoints, which allow creation of boleto or credit 
     - CPF
     - Name
 
-[ ] Should, usually, select a new Boleto provider(**MeuBoleto** or **Boletaria**) to execute the transaction every request.
-[ ] Should allow locking provider every request, so every boleto is provided by the same provider, via an application parameter. In case no parameter is given, both should be considered, as defined in the previous requirement.
+[ ] Should, usually, select a new Boleto provider(**MeuBoleto** or **Boletaria**) to execute the transaction every request. \
+[ ] Should allow locking provider every request, so every boleto is provided by the same provider, via an application parameter. In case no parameter is given, both should be considered, as defined in the previous requirement. \
 [ ] Should deny any transaction above an amount, parameterized in the application.
 
 ### Credit Card
@@ -72,7 +72,7 @@ Should have one or multiple endpoints, which allow creation of boleto or credit 
     - Cardholder Name
     - Expiration Date
 
-[ ] Should execute the transaction every request using the credit card provider **EzCredit**.
+[ ] Should execute the transaction every request using the credit card provider **EzCredit**. \
 [ ] Should deny any transaction above an amount, parameterized in the application.
 
 ## Payment Query
@@ -86,7 +86,7 @@ Should have one or multiple endpoints, which allow query of boleto or credit car
 - JWT Bearer Token
 - Transaction Id
 
-[ ] Should answer all saved information for the payment type.
+[ ] Should answer all saved information for the payment type. \
 [ ] Should return transaction only if executed by the client of the JWT Bearer Token.
 
 ### Query Between Dates
@@ -100,26 +100,26 @@ Should have one or multiple endpoints, which allow query of boleto or credit car
 - Page Number (Optional)
 - Page Size (Optional)
 
-[ ] Should answer all saved information for the payment type.
-[ ] Should answer in a paginated response.
-[ ] Should consider start date and end date as the start and end of times, respectively, in case they are null.
-[ ] Should have default page number as the first page.
-[ ] Should have default page size parameterized in the application.
+[ ] Should answer all saved information for the payment type. \
+[ ] Should answer in a paginated response. \
+[ ] Should consider start date and end date as the start and end of times, respectively, in case they are null. \
+[ ] Should have default page number as the first page. \
+[ ] Should have default page size parameterized in the application. \
 [ ] Should return only transactions executed by the client of the JWT Bearer Token.
 
 # Extra Clarifications
 
 ## Payment Providers
 
-- Boleto: MeuBoleto, Boletaria
-- Credit Card: EzCredit
+- Boleto: MeuBoleto, Boletaria.
+- Credit Card: EzCredit.
 
 ## Payments Status
 
-- GENERATED - When a Boleto has been generated but not paid yet
-- DENIED - When a transaction is denied because of any detail
-- FAILED - When an error with a third party occur
-- PAID - When a transaction has been marked as paid
+- GENERATED - When a Boleto has been generated but not paid yet.
+- DENIED - When a transaction is denied because of any detail.
+- FAILED - When an error with a third party occur.
+- PAID - When a transaction has been marked as paid.
 
 Those status are mandatory, but in case you need any other status, you can feel free to create them.
 
@@ -150,32 +150,32 @@ Should have one for multiple error codes for the following special cases and ret
 ## Setup
 
 At startup, the application should be initialized with some data, so some checks can be easier. Some of the data is:
-[ ] At least two different client credentials for different clients.
-[ ] At least one transaction per day in a period of at least two months in the past.
+[ ] At least two different client credentials for different clients. \
+[ ] At least one transaction per day in a period of at least two months in the past. \
 [ ] At least one transaction for each client.
 
 This can be done in a hardcoded manner, but we highly suggest the setup is done via a file read at startup by your application.
 
 ## Application Requirements
 
-[ ] Don't save credit card information like complete card number or CVV;
-[ ] Maximum transaction amount for Boleto and Credit Card should allow for different values, if needed;
-[ ] The default format for dates will be yyyy-MM-dd;
-[ ] The default format for datetimes will be yyyy-mm-dd'T'hh:mm:ssZ;
-[ ] All dates should be represented considering we are at GMT-3(America/Sao_Paulo). Datetimes *can* be at other timezones;
-[ ] Amounts should be considered only to have exactly two decimal places;
-[ ] Client Secret should be persisted as a hash and not as plain text;
-[ ] In case of HTTP request fails, the information shall be logged to the console;
+[ ] Don't save credit card information like complete card number or CVV. \
+[ ] Maximum transaction amount for Boleto and Credit Card should allow for different values, if needed. \
+[ ] The default format for dates will be yyyy-MM-dd. \
+[ ] The default format for datetimes will be yyyy-mm-dd'T'hh:mm:ssZ. \
+[ ] All dates should be represented considering we are at GMT-3(America/Sao_Paulo). Datetimes *can* be at other timezones. \
+[ ] Amounts should be considered only to have exactly two decimal places. \
+[ ] Client Secret should be persisted as a hash and not as plain text. \
+[ ] In case of HTTP request fails, the information shall be logged to the console.
 
 ## Extra Requirements
 
-[ ] Delivered as a public git repository with source code;
-[ ] Written using Kotlin or Java;
-[ ] Gradle as build tool;
-[ ] Spring Boot;
-[ ] Unit Tests using JUnit;
-[ ] Integrated Tests;
-[ ] A README explaining how to run your application;
+[ ] Delivered as a public git repository with source code. \
+[ ] Written using Kotlin or Java. \
+[ ] Gradle as build tool. \
+[ ] Spring Boot. \
+[ ] Unit Tests using JUnit. \
+[ ] Integrated Tests. \
+[ ] A README explaining how to run your application.
 
 ## Tips
 
